@@ -1,6 +1,6 @@
 import C from '../constants';
 
-const getAllRecipes = payload => ({
+const getAllRecipesAction = payload => ({
   type: C.GET_ALL_RECIPES_REQUEST,
   payload,
 });
