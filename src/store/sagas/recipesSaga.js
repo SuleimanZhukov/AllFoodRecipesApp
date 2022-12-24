@@ -15,7 +15,9 @@ function* getAllRecipes(action) {
         }),
       );
     }
-  } catch (error) {}
+  } catch (error) {
+    yield put(getAllRecipesAction({type: C.GET_ALL_RECIPES_FAIL, error: true}));
+  }
 }
 
 function* recipesSaga() {
