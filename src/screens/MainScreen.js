@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {getAllRecipesSelector} from '../store/selectors/recipesSelectors';
 import {View, Text, StyleSheet} from 'react-native';
 
 const MainScreen = () => {
+  const dispatch = useDispatch();
+  const getAllRecipes = useSelector(getAllRecipesSelector);
+
+  useEffect(() => {
+    dispatch(getAllRecipesSelector());
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Hello World</Text>
+      <Text>{getAllRecipes}</Text>
     </View>
   );
 };

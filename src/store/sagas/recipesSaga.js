@@ -1,5 +1,6 @@
 import {call, takeEvery, put} from 'redux-saga/effects';
 import C from '../constants';
+import Api from '../../services/api/calls';
 import {getAllRecipesAction} from '../actions/recipesActions';
 
 function* getAllRecipes(action) {
